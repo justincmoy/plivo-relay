@@ -3,3 +3,4 @@ python-wink
 requests
 uwsgi
 git+git://github.com/justincmoy/pyharmony.git
+sendgrid
