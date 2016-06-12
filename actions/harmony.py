@@ -11,7 +11,7 @@ class HarmonyActivityAction(Action):
 
         for a in client.get_config()['activity']:
             if a['label'] == activity:
-                print('starting activity {0}'.format(activity))
+                self.output.append('starting activity {0}'.format(activity))
                 client.start_activity(a['id'])
 
         client.disconnect(send_close=True)

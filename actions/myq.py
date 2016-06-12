@@ -69,10 +69,11 @@ class MyQGarageAction(Action):
         for door_id in self._get_doors():
             door_state = self._get_door_state(door_id)
             if garage_open and door_state in CLOSED_STATES:
-                print('Opening garage door: {0}'.format(
+                self.output.append('Opening garage door: {0}'.format(
                     self._set_door_state(door_id, OPEN_ACTION)))
             elif not garage_open and door_state in OPEN_STATES:
-                print('Closing garage door: {0}'.format(
+                self.output.append('Closing garage door: {0}'.format(
                     self._set_door_state(door_id, CLOSE_ACTION)))
             else:
-                print('Not updating garage door: {0}'.format(door_state))
+                self.output.append('Not updating garage door: {0}'.format(
+                    door_state))
