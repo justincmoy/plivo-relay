@@ -4,7 +4,7 @@ import importlib
 
 def action_handler(user, action):
     actions = ACTIONS[action]
-    if actions is str:
+    if actions is not list:
         actions = [actions]
 
     for action in actions:
